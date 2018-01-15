@@ -31,7 +31,40 @@ MDN
   *  newTree.value // 2
   *  newTree.children[0].value // 4
   *  newTree.children[1].value // 6
-  *  newTree.children[0].children[1].value // 10
+  *  newTree.children[0].children[1].value // 10 // for nested loop
   *  newTree.children[1].children[1].value // 14
   *  root1.value // still 1
   */
+
+  var Tree = function(value) {
+    var newTree = {};
+    newTree.value = value;
+
+
+    newTree.children = [];
+    _.extend(newTree,growingTree );
+    return newTree;
+  };
+
+  var growingTree = {};
+  debugger
+  growingTree.addchild = function(value) {
+    //create a child
+    var newChild = new Tree(value);
+    //push into children array
+    this.children.push(newChild);
+  };
+    //loop through the children array
+    for(var i = 0; i < this.children.length; i++){
+      //compare with in array
+      var child = this.children[i];
+        //
+        if(child.contains(value)){
+          //return *2
+          return value * 2
+      }
+    };
+    growingTree.addchildren = function(value) {
+      var newChildren =
+
+    }
